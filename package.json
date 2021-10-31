@@ -1,0 +1,31 @@
+{
+  "name": "wcnft",
+  "version": "1.0.0",
+  "description": "Wedding contract NFT",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vzx7/wcnft.git"
+  },
+  "keywords": [
+    "NFT"
+  ],
+  "author": "Zazdravnykh V. V.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vzx7/wcnft/issues"
+  },
+  "homepage": "https://github.com/vzx7/wcnft#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@openzeppelin/contracts": "^4.3.2",
+    "ethers": "^5.5.1",
+    "hardhat": "^2.6.7"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
