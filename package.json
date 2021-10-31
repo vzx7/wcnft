@@ -4,7 +4,8 @@
   "description": "Wedding contract NFT",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "do_nft": "node scripts/mint-nft.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "hardhat": "^2.6.7"
   },
   "dependencies": {
+    "@alch/alchemy-web3": "^1.1.7",
     "dotenv": "^10.0.0"
   }
 }
