@@ -11,7 +11,7 @@ const contract = require("../artifacts/contracts/WCNFT.sol/WCNFT.json")
 
 const contractAddress = "0x211c72231987aa6e7d49F5e6c15c4691e8A18603"
 const nftContract = new web3.eth.Contract(contract.abi, contractAddress)
-
+// this is a example
 async function mintNFT(tokenURI) {
     const nonce = await web3.eth.getTransactionCount(PUBLIC_KEY, 'latest'); //get latest nonce
 
