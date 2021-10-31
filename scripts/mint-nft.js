@@ -51,6 +51,7 @@ async function mintNFT(tokenURI) {
     })
 }
 
+// FIXME - Replace the stub with a real link.
 mintNFT(
     "https://gateway.pinata.cloud/ipfs/Qmc861EfjwbymjSzBEjmZnsq51u8MgNWW6vTjPU8N7DBck"
   )
