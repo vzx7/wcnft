@@ -22,7 +22,7 @@ module.exports = async ({
     const WCNFTContract = await ethers.getContractFactory("WCNFT")
     const accounts = await hre.ethers.getSigners()
     const signer = accounts[0]
-    const WCNFT = new ethers.Contract(WCNFT.address, WCNFTContract.interface, signer)
+    const wcNFT = new ethers.Contract(WCNFT.address, WCNFTContract.interface, signer)
     const networkName = networkConfig[chainId]['name']
 
     log(`Verify with:\n npx hardhat verify --network ${networkName} ${WCNFT.address}`)
@@ -30,10 +30,10 @@ module.exports = async ({
     let filepath = "./images/png.png"
     let png = fs.readFileSync(filepath, { encoding: "utf8" })
     log(`We will use ${filepath} as our PNG, and this will turn into a tokenURI. `)
-    tx = await WCNFT.create(png)
+    tx = await wcNFT.mintNFT(png)
     await tx.wait(1)
     log(`You've made your first NFT!`)
-    log(`You can view the tokenURI here ${await WCNFT.tokenURI(0)}`)
+    log(`You can view the tokenURI here ${await wcNFT.tokenURI(0)}`)
 }
 
 module.exports.tags = ['all', 'png']
