@@ -29,7 +29,7 @@ contract WCNFT is ERC721URIStorage, Ownable {
     }
 
     function pngToImageURI(string memory png) public pure returns (string memory) {
-        string memory baseURL = "data:image/png;base64,";
+        string memory baseURL = "data:image/svg+xml;base64,";
         string memory pngBase64Encoded = Base64.encode(bytes(string(abi.encodePacked(png))));
         return string(abi.encodePacked(baseURL, pngBase64Encoded));
     }

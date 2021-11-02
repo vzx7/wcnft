@@ -11,7 +11,6 @@ module.exports = async ({
     const { deployer } = await getNamedAccounts()
     const chainId = await getChainId()
 
-    log("----------------------------------------------------")
     const WCNFT = await deploy('WCNFT', {
         from: deployer,
         log: true
@@ -26,14 +25,13 @@ module.exports = async ({
     const networkName = networkConfig[chainId]['name']
 
     log(`Verify with:\n npx hardhat verify --network ${networkName} ${WCNFT.address}`)
-    log("Let's create an NFT now!")
-    let filepath = "./images/png.png"
-    let png = fs.readFileSync(filepath, { encoding: "utf8" })
-    log(`We will use ${filepath} as our PNG, and this will turn into a tokenURI. `)
-    tx = await wcNFT.mintNFT(png)
+
+    let filepath = "./images/hearts.svg"
+    let svg = fs.readFileSync(filepath, { encoding: "utf8" })
+    log(`We will use ${filepath} as our SVG, and this will turn into a tokenURI. `)
+    tx = await wcNFT.mintNFT(svg)
     await tx.wait(1)
-    log(`You've made your first NFT!`)
     log(`You can view the tokenURI here ${await wcNFT.tokenURI(0)}`)
 }
 
-module.exports.tags = ['all', 'png']
+module.exports.tags = ['all', 'svg']
