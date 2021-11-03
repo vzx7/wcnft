@@ -13,6 +13,7 @@ contract WCNFT is ERC721URIStorage, Ownable {
     Counters.Counter private _tokenIds;
 
     constructor() ERC721("WCNFT", "WCNFT") {}
+    
     ///This nft only ownable FIXME
     function mintNFT(address recipient, string memory tokenURI)
         public onlyOwner
@@ -21,7 +22,7 @@ contract WCNFT is ERC721URIStorage, Ownable {
         _tokenIds.increment();
 
         uint256 newItemId = _tokenIds.current();
-        _mint(recipient, newItemId);
+        _safeMint(recipient, newItemId);
         _setTokenURI(newItemId, tokenURI);
 
         return newItemId;
